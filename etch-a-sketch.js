@@ -18,3 +18,18 @@ ctx.moveTo(x, y);
 ctx.lineTo(x, y);
 ctx.stroke();
 
+// draw function
+function draw( {key} ) {
+    console.log(key);
+}
+
+// handler for keys
+function handleKey(e) {
+    if (e.key.includes('Arrow')) {
+        e.preventDefault();
+        draw({ key: e.key} );
+    }
+}
+
+// listening for arrow keys
+window.addEventListener('keydown', handleKey);
