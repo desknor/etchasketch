@@ -61,5 +61,21 @@ function handleKey(e) {
     }
 }
 
+// shake/clear button function
+
+function clearCanvas() {
+  canvas.classList.add('shake');
+  ctx.clearRect(0, 0, width, height);
+  canvas.addEventListener(
+    'animationend',
+    function() {
+      alert('Please, do not shake me as I am empty');
+      canvas.classList.remove('shake');
+    },
+    { once: true }
+  );
+}
+
 // listening for arrow keys
 window.addEventListener('keydown', handleKey);
+shakebutton.addEventListener('click', clearCanvas);
